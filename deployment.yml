@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appsku-deploy
+spec:
+  selector:
+    matchLabels:
+      app: appsku
+  template:
+    metadata:
+      labels:
+        app: appsku
+    spec:
+      containers:
+      - name: ct-appsku
+        image: aldissatriya/nginx-hextris
+        ports:
+        - containerPort: 80
